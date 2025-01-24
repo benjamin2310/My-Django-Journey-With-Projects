@@ -1,16 +1,16 @@
 from django.views.generic import TemplateView
 
 class HomePageView(TemplateView):
-    template_name = "home.html"
+    template_name = "pages/home.html"
 
 class AboutPageView(TemplateView):
-    template_name = "about.html"
+    template_name = "pages/about.html"
 
 class BlogPageView(TemplateView):
-    template_name = "blog.html"
+    template_name = "pages/blog.html"
 
 class ContactPageView(TemplateView):
-    template_name = "contact.html"
+    template_name = "pages/contact.html"
 
 class ServicesPageView(TemplateView):
-    template_name = "services.html"
+    template_name = "pages/services.html"
