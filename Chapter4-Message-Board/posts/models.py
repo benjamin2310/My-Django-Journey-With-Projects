@@ -12,7 +12,7 @@ class Author(models.Model):
     author_date = models.DateField()
 
     def __str__(self):
-        return self.author_name[:50]
+        return self.author_email[:50]
 
 class Student(models.Model):
     name = models.TextField(max_length=200)
