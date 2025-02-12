@@ -1,3 +1,17 @@
+from django.contrib.auth import get_user_model
 from django.test import TestCase
-
+from .models import Post
 # Create your tests here.
+
+class BlogTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        cls.user = get_user_model().objects.create_user(username="", email="ampahben3@gmail.com", password="")
+        cls.post = Post.objects.create(title = "A good title", description="Nice body  content", author=cls.auth)
+
+    def test_post_model(self):
+        self.assertEqual(self.post.title, "A good title")
+        self.assertEqual(self.post.body, "Nice body content")
+        self.assertEqual(self.post.author.username, "testuser")
+        self.assertEqual(str(self.post), "A good title")
+        self.assertEqual(self.post.get_absolute_url(), "/post/1/")
