@@ -3,8 +3,10 @@
 {% block content %}
 {% for post in post_list %}
 <div class="post-entry">
-    <h2><a href="{% url 'post_detail' post.pk}">{{ post.title }}</a></h2>
+    <!-- Can use both pk or id -->
+    <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
     <p>{{ post.description }}</p>
+    <em>{{ post.date_of_post }}</em>
 </div>
 {% endfor %}
 {% endblock content %}
